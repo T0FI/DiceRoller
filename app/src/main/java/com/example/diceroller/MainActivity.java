@@ -21,7 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
         TextView tv = this.findViewById(R.id.numberTextView) ;
         TextView en = (TextView) this.findViewById(R.id.EnterNumber);
-        TextView ms = this.findViewById(R.id.Message);
+        TextView si = (TextView) this.findViewById(R.id.ScoreId);
+
 
         Random r = new Random();
         int number = r.nextInt (6);
@@ -34,7 +35,20 @@ public class MainActivity extends AppCompatActivity {
         int UserNumber = Integer.valueOf(en.getText().toString());
 
         if (UserNumber == Number) {
+          int Score = Integer.valueOf(si.getText().toString());
+          int ScoreChecker = Score + 1;
+
+            si.setText(Integer.toString(ScoreChecker));
+
             Toast.makeText(getApplicationContext(), "You guessed the same number, congratulations!", Toast.LENGTH_SHORT).show();
+
+
         }
+
+
+
+
+
+
     }
 }
